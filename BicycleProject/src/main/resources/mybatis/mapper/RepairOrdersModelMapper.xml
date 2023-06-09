@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.LW1.mapper.RepairOrdersModelMapper">
+
+    <!--维修模块-->
+
+    <!--维修项目模块-->
+    <!--新增维修项目-->
+    <insert id="addRepairItems" parameterType="Map">
+        insert into repairItems(itemsName,itemsPrice) values(#{itemsName},#{itemsPrice})
+    </insert>
+
+    <!--修改维修项目-->
+    <update id="updateRepairItems" parameterType="Map">
+        update repairItems set
+        <if test="itemsName != null">
+            itemsName = #{itemsName},
+        </if>
+        <if test="itemsPrice != null">
+            itemsPrice = #{itemsPrice},
+        </if>
+        status = #{status} where itemsId = #{itemsId}
+    </update>
+
+    <!--删除维修项目-->
+    <delete id="deleteRepairItems" parameterType="Integer">
+        delete from repairItems where itemsId = #{itemsId}
+    </delete>
+
+    <!--查询维修项目 按照 启用状态，项目名（模糊拆线呢），项目id 来查询-->
+    <select id="selectRepairItemsByInfo" parameterType="Map" resultType="com.LW1.entities.Repair.RepairItems">
+        select * from repairItems where 1=1
+        <if test="status != null">
+            and status = #{status}
+        </if>
+        <if test="itemsName != null">
+            and itemsName like '%${itemsName}%'
+        </if>
+        <if test="itemsId != null">
+            and itemsId = #{itemsId}
+        </if>
+    </select>
+
+
+    <!--维修清单模块-->
+    <!--新增维修清单（配合 mongodb）-->
+    <insert id="addRepairOrders" parameterType="Map">
+        insert into repairOrders(userId1,username1,userId2,username2,repairOrdersDetailsId,date,sumPrice)
+        values(#{userId1},#{username1},#{userId2},#{username2},#{repairOrdersDetailsId},#{date},#{sumPrice})
+    </insert>
+
+    <!--修改维修清单-->
+    <update id="updateRepairOrders" parameterType="Map">
+        update repairOrders set
+        <if test="userId1 != null">
+            userId1 = #{userId1},
+        </if>
+        <if test="username1 != null">
+            username1 = #{username1},
+        </if>
+        <if test="userId2 != null">
+            userId2 = #{userId2},
+        </if>
+        <if test="username2 != null">
+            username2 = #{username2},
+        </if>
+        <if test="date != null">
+            date = #{date},
+        </if>
+        <if test="sumPrice != null">
+            sumPrice = #{sumPrice},
+        </if>
+        repairStatus = #{repairStatus} where repairId = #{repairId}
+    </update>
+
+    <!--删除维修清单-->
+    <delete id="deleteRepairOrders" parameterType="Integer">
+        delete from repairOrders where repairId = #{repairId}
+    </delete>
+
+    <!--查询维修清单 按照维修单id,申请维修的用户id，受理维修的管理员的id，维修单申请日期（模糊查询）,维修单状态-->
+    <select id="selectRepairOrdersByInfo" parameterType="Map" resultType="com.LW1.entities.Repair.RepairOrders">
+        select * from repairOrders where 1=1
+        <if test="repairId != null">
+            and repairId = #{repairId}
+        </if>
+        <if test="userId1 != null">
+            and userId1 = #{userId1}
+        </if>
+        <if test="userId2 != null">
+            and userId2 = #{userId2}
+        </if>
+        <if test="date != null">
+            and date like '%${date}%'
+        </if>
+        <if test="repairStatus != null">
+            and repairStatus = #{repairStatus}
+        </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--绑定 用户模块 接口-->
+<mapper namespace="com.LW1.mapper.UserModelMapper">
+
+    <!--用户模块-->
+
+    <!--新增用户-->
+    <insert id="addUser" parameterType="Map">
+        insert into user(username,password,phoneNumber) values(#{username},#{password},#{phoneNumber});
+    </insert>
+
+    <!--删除用户-->
+    <delete id="deleteUser" parameterType="Integer">
+        delete from user where userId=#{userId};
+    </delete>
+
+    <!--修改用户-->
+    <update id="updateUser" parameterType="Map">
+        update user set
+        <if test="username != null">
+            username=#{username},
+        </if>
+        <if test="password != null">
+            password=#{password},
+        </if>
+        <if test="phoneNumber != null">
+            phoneNumber=#{phoneNumber},
+        </if>
+        <if test="role != null">
+            role=#{role},
+        </if>
+        status=#{status}
+        where userId=#{userId};
+    </update>
+
+    <!--查询用户按照用户名（模糊查询）-->
+    <select id="selectUserByName" parameterType="String" resultType="com.LW1.entities.User.User">
+        select * from user where username like '%${username}%';
+    </select>
+
+    <!--查询用户按照用户名-->
+    <select id="selectByUserName1" parameterType="String" resultType="com.LW1.entities.User.User">
+        select * from user where username like #{username};
+    </select>
+
+    <!--查询用户按照id-->
+    <select id="selectUserById" parameterType="Integer" resultType="com.LW1.entities.User.User">
+        select * from user where 1=1
+        <if test="userId != null">
+            and userId=#{userId};
+        </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--绑定 商品模块 接口-->
+<mapper namespace="com.LW1.mapper.CommodityModelMapper">
+
+    <!--商品与消费模块-->
+
+    <!--商品模块-->
+    <!--新增商品信息-->
+    <insert id="addCommodity" parameterType="Map">
+        insert into Commodity(commodityName,commodityType,pictureId,introduce,stock,price) values(#{commodityName},#{commodityType},#{pictureId},#{introduce},#{stock},#{price});
+    </insert>
+
+    <!--删除商品信息-->
+    <delete id="deleteCommodity" parameterType="Integer">
+        delete from Commodity where commodityId=#{commodityId};
+    </delete>
+
+    <!--修改商品信息-->
+    <update id="updateCommodity" parameterType="Map">
+        update Commodity set
+            <if test="commodityName != null">
+                commodityName=#{commodityName},
+            </if>
+            <if test="commodityType != null">
+                commodityType=#{commodityType},
+            </if>
+            <if test="pictureId != null">
+                pictureId=#{pictureId},
+            </if>
+            <if test="introduce != null">
+                introduce=#{introduce},
+            </if>
+            <if test="stock != null">
+                stock=#{stock},
+            </if>
+            <if test="price != null">
+                price=#{price},
+            </if>
+            sold=#{sold}
+            where commodityId=#{commodityId};
+    </update>
+
+    <!--按照商品名（模糊查询） 和 商品类型 查询商品信息-->
+    <select id="selectCommodityByName" resultType="com.LW1.entities.Commodity.Commodity" parameterType="Map">
+        select * from commodity where 1=1
+        <if test="commodityName != null">
+            and commodityName like '%${commodityName}%'
+        </if>
+        <if test="commodityType != null">
+            and commodityType = #{commodityType}
+        </if>
+    </select>
+
+    <!--按照id查询商品信息-->
+    <select id="selectCommodityById" resultType="com.LW1.entities.Commodity.Commodity" parameterType="Integer">
+        select * from commodity where commodityId = #{commodityId};
+    </select>
+
+
+
+
+
+    <!--销售清单模块-->
+    <!--新增销售清单-->
+    <insert id="addSaleList" parameterType="Map">
+        insert into SaleList(userId,username,detailsId,sumPrice,saleTime) values(#{userId},#{username},#{detailsId},#{sumPrice},#{saleTime})
+    </insert>
+
+    <!--删除销售清单-->
+    <delete id="deleteSaleList" parameterType="Integer">
+        delete from SaleList where saleId=#{saleId}
+    </delete>
+
+    <!--修改消费清单-->
+    <update id="updateSaleList" parameterType="Map">
+        update SaleList set
+        <if test="userId != null">
+            userId=#{userId},
+        </if>
+        <if test="username != null">
+            username=#{username},
+        </if>
+        <if test="detailId != null">
+            detailsId=#{detailsId},
+        </if>
+        <if test="sumPrice != null">
+            sumPrice=#{smPrice},
+        </if>
+        <if test="saleTime != null">
+            saleTime=#{saleTime},
+        </if>
+        listStatus=#{listStatus} where saleId=#{saleId};
+    </update>
+
+    <!--按照 消费者id ，消费日期（模糊查询），清单状态  查询数据-->
+    <select id="selectSaleListByInfo" resultType="com.LW1.entities.Commodity.SaleList" parameterType="Map">
+        select * from SaleList where 1=1
+        <if test="userId != null">
+            and userId = #{userId}
+        </if>
+        <if test="saleTime != null">
+            and saleTime like '%${saleTime}%'
+        </if>
+        <if test="listStatus != null">
+            and listStatus = #{listStatus}
+        </if>
+        <if test="saleId != null">
+            and saleId = #{saleId}
+        </if>
+    </select>
+
+
+
+
+    <!--购物车模块-->
+    <!--新增购物车-->
+    <insert id="addShoppingCart" parameterType="Map">
+        insert into ShoppingCart(userId,detailsId) values(#{userId},#{detailsId})
+    </insert>
+
+    <!--按照id 查询购物车-->
+    <select id="selectShoppingCartById" parameterType="Integer" resultType="com.LW1.entities.Commodity.ShoppingCart">
+        select * from ShoppingCart where userId=#{userId}
+    </select>
+
+</mapper>
