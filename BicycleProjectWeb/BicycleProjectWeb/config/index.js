@@ -12,11 +12,11 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       //配置地址代理
-      /*'http://127.0.0.1:8081':{ //要被代理的地址
-        target:"http://192.168.0.191:8081", //要代理成的地址
+      '/BicycleProject':{ //要代理成的地址
+        target:"http://127.0.0.1:8081", //要被代理的地址
         changeOrigin:true,
-        //pathRewrite:{'^http://127.0.0.1:8081':''} //代理的时候把 http:127.0.0.1 替换成 ''，这样拼接出来就是 http://192.168.29.208 啥啥啥的
-      }*/
+        // pathRewrite:{'^/BicycleProject':''} //代理的时候把 /BicycleProject 替换成 '' （暂时没用，我咋知道，后续再看）
+      }
     },
 
     // Various Dev Server settings

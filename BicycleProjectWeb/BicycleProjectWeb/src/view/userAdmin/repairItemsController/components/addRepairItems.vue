@@ -54,7 +54,8 @@ export default {
           itemsName:this.repairItemsName,
           itemsPrice:this.repairItemsPrice
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/addRepairItems"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/addRepairItems"
+        url:"/BicycleProject/Bicycle/repair/addRepairItems"
       }).then(repsonse=>{
         i=repsonse.data;
         if (i === 1){

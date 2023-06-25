@@ -26,7 +26,7 @@
           </div>
 
           <!-- style="vertical-align:top;" ：设置文本域 textarea 顶格对齐 -->
-          <div class="div_tip" style="margin-left: 140px" vertical-align:top>商品简介：<el-input v-model="introduce" type="textarea" :autosize="{ minRows: 3, maxRows: 5}" style="width: 400px;vertical-align:top;" placeholder="请输入商品简介"></el-input></div>
+          <div class="div_tip" style="margin-left: 140px;vertical-align:top ">商品简介：<el-input v-model="introduce" type="textarea" :autosize="{ minRows: 3, maxRows: 5}" style="width: 400px;vertical-align:top;" placeholder="请输入商品简介"></el-input></div>
 
           <!-- onkeyup="value=value.replace(/[^\d]/g,'')"：设置输入框只能输入正整数 -->
           <div class="div_tip">商品存量：<el-input v-model="stock" style="width: 200px" placeholder="请输入商品存量" onkeyup="value=value.replace(/[^\d]/g,'')"></el-input></div>
@@ -152,7 +152,8 @@ export default {
           stock:this.stock,
           price:this.price
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodity"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodity"
+        url:"/BicycleProject/Bicycle/commodity/addCommodity"
       }).then(response=>{
         let i;
         i=response.data;
@@ -239,7 +240,8 @@ export default {
         header:{
           'Content-Type':'application/json' //规定传递的参数格式为json
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodityPicture"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodityPicture"
+        url:"/BicycleProject/Bicycle/commodity/addCommodityPicture"
       }).then(response=>{
         this.pictureId=response.data;//将返回的图片id赋值回去
         console.log(this.pictureId);//输出 返回的图片id

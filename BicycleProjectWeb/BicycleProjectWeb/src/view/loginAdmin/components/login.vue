@@ -107,7 +107,8 @@ export default {
         params:{ //参数
           username:this.form.username
         },
-        url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName1"
+        // url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName1"
+        url:"/BicycleProject/Bicycle/user/selectUserByName1"
       }).then(
         async response => {
           this.user = response.data;
@@ -148,7 +149,8 @@ export default {
       let shoppingCart;
       await this.axios({
         method:"get",
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectShoppingCart/"+userId
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectShoppingCart/"+userId
+        url:"/BicycleProject/Bicycle/commodity/selectShoppingCart/"+userId
       }).then(response=>{
         shoppingCart=response.data;
       });

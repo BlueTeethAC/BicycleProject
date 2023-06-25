@@ -131,7 +131,8 @@ export default {
         params:{ //参数
           username:this.input1
         },
-        url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName"
+        // url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName"
+        url:"/BicycleProject/Bicycle/user/selectUserByName"
       }).then(response=>{
         this.user = response.data;
         this.userInfo = this.user;
@@ -189,7 +190,8 @@ export default {
           useranme:username1,
           status:status1,
         },
-        url:"http://127.0.0.1:8081/Bicycle/user/updateUser"
+        // url:"http://127.0.0.1:8081/Bicycle/user/updateUser"
+        url:"/BicycleProject/Bicycle/user/updateUser"
       }).then(response=>{
         i=response.data;
         if (i === 1){
@@ -208,7 +210,8 @@ export default {
       method:"get",
       params:{ //参数
       },
-      url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName"
+      // url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName"
+      url:"/BicycleProject/Bicycle/user/selectUserByName"
     }).then(response=>{
       userData = response.data;
     })

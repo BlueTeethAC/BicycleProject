@@ -138,7 +138,8 @@ export default {
         params:{
           itemsName:input
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairItemsByInfo"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairItemsByInfo"
+        url:"/BicycleProject/Bicycle/repair/selectRepairItemsByInfo"
       }).then(response=>{
         this.repairItems=response.data;
       });
@@ -188,7 +189,8 @@ export default {
           status:status,
           itemsId:itemsId
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairItems"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairItems"
+        url:"/BicycleProject/Bicycle/repair/updateRepairItems"
       }).then(response=>{
         i=response.data;
         if (i === 1){
@@ -208,7 +210,8 @@ export default {
       method:"get",
       params:{ //参数
       },
-      url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairItemsByInfo"
+      // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairItemsByInfo"
+      url:"/BicycleProject/Bicycle/repair/selectRepairItemsByInfo"
     }).then(response=>{
       repairItems1 = response.data;
     })

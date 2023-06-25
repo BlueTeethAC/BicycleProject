@@ -51,7 +51,8 @@ export default {
           itemsId:itemsId1,
           status:status1
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairItems"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairItems"
+        url:"/BicycleProject/Bicycle/repair/updateRepairItems"
       }).then(response=>{
         i=response.data;
 

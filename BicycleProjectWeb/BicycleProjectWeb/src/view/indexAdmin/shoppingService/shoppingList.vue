@@ -183,7 +183,8 @@ export default {
           userId:userId,
           listStatus:listStats
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        url:"/BicycleProject/Bicycle/commodity/selectSaleListByInfo"
       }).then(response=>{
         this.shoppingList = response.data;
       })
@@ -226,7 +227,8 @@ export default {
           saleId:saleId,
           listStatus:listStatus
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/updateStatus"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/updateStatus"
+        url:"/BicycleProject/Bicycle/commodity/updateStatus"
       }).then(response=>{
         let i=response.data;
         if (i === 1){
@@ -246,7 +248,8 @@ export default {
         params: {
           userId: vuex.state.userId
         },
-        url: "http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        // url: "http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        url: "/BicycleProject/Bicycle/commodity/selectSaleListByInfo"
       }).then(response => {
         vm.shoppingList=response.data;//获得数据
         vm.userId1 = vuex.state.userId;

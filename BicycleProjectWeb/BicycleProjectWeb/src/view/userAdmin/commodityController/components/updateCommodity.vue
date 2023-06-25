@@ -179,7 +179,8 @@ export default {
           sold:this.sold,
           price:this.price
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/updateCommodity"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/updateCommodity"
+        url:"/BicycleProject/Bicycle/commodity/updateCommodity"
       }).then(response=>{
         let i;
         i=response.data;
@@ -266,7 +267,8 @@ export default {
         header:{
           'Content-Type':'application/json' //规定传递的参数格式为json
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodityPicture"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodityPicture"
+        url:"/BicycleProject/Bicycle/commodity/addCommodityPicture"
       }).then(response=>{
         this.pictureId=response.data;//将返回的图片id赋值回去
         console.log(this.pictureId);//输出 返回的图片id
@@ -287,7 +289,8 @@ export default {
         params:{
           pictureId:vm.pictureId
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityPictureById"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityPictureById"
+        url:"/BicycleProject/Bicycle/commodity/selectCommodityPictureById"
       }).then(response=>{
         pictureBase64=response.data;
         vm.url1 = pictureBase64;

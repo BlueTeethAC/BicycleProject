@@ -134,7 +134,8 @@ export default {
           userId:userId
         },
         data:shoppingCart,
-        url:"http://127.0.0.1:8081/Bicycle/commodity/updateShoppingCart"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/updateShoppingCart"
+        url:"/BicycleProject/Bicycle/commodity/updateShoppingCart"
       }).then(response=>{
         let i=response.data;
         if (i === 0){
@@ -157,7 +158,8 @@ export default {
         params: {
           pictureId: pictureId,
         },
-        url: "http://127.0.0.1:8081/Bicycle/commodity/selectCommodityPictureById"
+        // url: "http://127.0.0.1:8081/Bicycle/commodity/selectCommodityPictureById"
+        url: "/BicycleProject/Bicycle/commodity/selectCommodityPictureById"
       }).then(response => {
         picture = response.data;
         //this.imageData.push(picture);
@@ -167,10 +169,6 @@ export default {
       //console.log(this.imageData);
       console.log("================================");
       return picture;
-    },
-    //转换为两位小数
-    towNumber(val) {
-      return val.toFixed(2)
     },
   },
   //进入页面时开始查询
@@ -182,7 +180,8 @@ export default {
         methods:"get",
         params:{
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityById/"+vm.commodityId
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityById/"+vm.commodityId
+        url:"/BicycleProject/Bicycle/commodity/selectCommodityById/"+vm.commodityId
       }).then(async response => {
         vm.commodityInfo = response.data;//获得商品详细信息
         console.log(vm.commodityInfo[0]);

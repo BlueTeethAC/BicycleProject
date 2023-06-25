@@ -108,7 +108,8 @@ export default {
           role:role1,
           status:this.status1
         },
-        url:"http://127.0.0.1:8081/Bicycle/user/updateUser"
+        // url:"http://127.0.0.1:8081/Bicycle/user/updateUser"
+        url:"/BicycleProject/Bicycle/user/updateUser"
       }).then(response=>{
         i = response.data;
         if (i===1){

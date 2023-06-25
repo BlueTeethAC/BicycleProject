@@ -112,7 +112,8 @@ export default {
         header:{
           'Content-Type':'application/json' //规定传递的参数格式为json
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodityPicture"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/addCommodityPicture"
+        url:"/BicycleProject/Bicycle/commodity/addCommodityPicture"
       }).then(response=>{
         this.pictureId=response.data;//将返回的图片id赋值回去
         console.log(this.pictureId);//输出 返回的图片id

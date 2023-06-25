@@ -239,7 +239,8 @@ export default {
           saleTime:saleTime
         },
         data:saleList,
-        url:"http://127.0.0.1:8081/Bicycle/commodity/addSaleList"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/addSaleList"
+        url:"/BicycleProject/Bicycle/commodity/addSaleList"
       }).then(response=>{
         let i = response.data;
         if (i === 1){
@@ -299,7 +300,8 @@ export default {
         method:"get",
         params:{
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityById/"+commodityId
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityById/"+commodityId
+        url:"/BicycleProject/Bicycle/commodity/selectCommodityById/"+commodityId
       }).then(response=>{
         commodityInfo=response.data;
       });
@@ -343,7 +345,8 @@ export default {
           userId:userId
         },
         data:shoppingCart,
-        url:"http://127.0.0.1:8081/Bicycle/commodity/updateShoppingCart"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/updateShoppingCart"
+        url:"/BicycleProject/Bicycle/commodity/updateShoppingCart"
       }).then(response=>{
         let i=response.data;
         if (i === 1 || i === 2){

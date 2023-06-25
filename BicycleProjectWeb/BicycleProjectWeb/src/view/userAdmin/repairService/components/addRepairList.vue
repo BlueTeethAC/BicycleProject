@@ -140,7 +140,8 @@ export default {
       params:{
         status:1
       },
-      url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairItemsByInfo"
+      // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairItemsByInfo"
+      url:"/BicycleProject/Bicycle/repair/selectRepairItemsByInfo"
     }).then(response=>{
       repairItemsInfo=response.data;
     })
@@ -285,7 +286,8 @@ export default {
         data:
           checkList
         ,
-        url:"http://127.0.0.1:8081/Bicycle/repair/addRepairOrders"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/addRepairOrders"
+        url:"/BicycleProject/Bicycle/repair/addRepairOrders"
       }).then(response=>{
         i=response.data;
         if (i===1){

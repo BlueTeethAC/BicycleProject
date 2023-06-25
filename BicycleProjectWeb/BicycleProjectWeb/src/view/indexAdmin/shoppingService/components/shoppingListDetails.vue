@@ -88,7 +88,8 @@ export default {
       //用消费清单明细Id 去查询明细数据
       await axios({
         methods:"get",
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListDetails/"+vm.detailsId
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListDetails/"+vm.detailsId
+        url:"/BicycleProject/Bicycle/commodity/selectSaleListDetails/"+vm.detailsId
       }).then(response=>{
         vm.shoppingListDetails=response.data;
         ///console.log(vm.shoppingListDetails.listAllDetails)

@@ -148,7 +148,8 @@ export default {
         params:{
           repairId:repairId
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+        url:"/BicycleProject/Bicycle/repair/selectRepairOrdersByInfo"
       }).then(response=>{
         //返回的数据是只有一个 RepairOrders元素 的 RepairOrders集合
         //所以需要从用 RepairOrders[0] 才能获得其中的 RepairOrders 元素
@@ -180,7 +181,8 @@ export default {
           params:{
             id:repairOrdersDetailsId
           },
-          url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersDetails"
+          // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersDetails"
+          url:"/BicycleProject/Bicycle/repair/selectRepairOrdersDetails"
         }).then(response=>{
           vm.repairOrdersDetails = response.data;
           vm.nowRole=vuex.state.role;

@@ -239,7 +239,8 @@ export default {
           repairId:repairId,
           repairStatus:repairStatus,
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairOrders"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairOrders"
+        url:"/BicycleProject/Bicycle/repair/updateRepairOrders"
       }).then(response=>{
         i=response.data;
         if (i === 1){
@@ -263,7 +264,7 @@ export default {
           userId1:vuex.state.userId,
           repairStatus:input
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+        url:"/BicycleProject/Bicycle/repair/selectRepairOrdersByInfo"
       }).then(response=>{
         this.repairList=response.data
       })
@@ -281,7 +282,8 @@ export default {
       params:{
         userId1:vuex.state.userId
       },
-      url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+      // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+      url:"/BicycleProject/Bicycle/repair/selectRepairOrdersByInfo"
     }).then(response=>{
       repairList=response.data;
       console.log(repairList)

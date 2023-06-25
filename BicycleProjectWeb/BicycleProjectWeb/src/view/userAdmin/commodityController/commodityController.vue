@@ -157,7 +157,8 @@ export default {
         params:{
           commodityName:selectInfo
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityByName"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityByName"
+        url:"/BicycleProject/Bicycle/commodity/selectCommodityByName"
       }).then(response=>{
         this.commodityInfo=response.data;
       })

@@ -180,7 +180,8 @@ export default {
           saleId:saleId,
           listStatus:listStatus
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/updateStatus"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/updateStatus"
+        url:"/BicycleProject/Bicycle/commodity/updateStatus"
       }).then(response=>{
         let i = response.data;
         console.log(i);
@@ -222,7 +223,8 @@ export default {
         params:{
           listStatus:listStatus
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        url:"/BicycleProject/Bicycle/commodity/selectSaleListByInfo"
       }).then(response=>{
         this.saleListInfo=response.data;
       })
@@ -235,7 +237,8 @@ export default {
         methods: "post",
         params:{
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        // url:"http://127.0.0.1:8081/Bicycle/commodity/selectSaleListByInfo"
+        url:"/BicycleProject/Bicycle/commodity/selectSaleListByInfo"
       }).then(response=>{
         vm.saleListInfo=response.data;//查询到数据
       })

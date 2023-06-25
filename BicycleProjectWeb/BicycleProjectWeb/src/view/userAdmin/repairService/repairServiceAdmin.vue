@@ -188,7 +188,8 @@ export default {
       method:"get",
       params:{
       },
-      url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+      // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+      url:"/BicycleProject/Bicycle/repair/selectRepairOrdersByInfo"
     }).then(response=>{
       repairList=response.data;
       console.log(repairList)
@@ -214,7 +215,8 @@ export default {
         params:{
           repairStatus:input
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/selectRepairOrdersByInfo"
+        url:"/BicycleProject/Bicycle/repair/selectRepairOrdersByInfo"
       }).then(response=>{
         this.repairList=response.data
       })
@@ -240,7 +242,8 @@ export default {
           username2:username,
           repairStatus:repairStatus
         },
-        url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairOrders"
+        // url:"http://127.0.0.1:8081/Bicycle/repair/updateRepairOrders"
+        url:"/BicycleProject/Bicycle/repair/updateRepairOrders"
       }).then(response=>{
         let i = response.data;
         if (i === 1){

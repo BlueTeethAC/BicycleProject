@@ -71,7 +71,8 @@ export default {
         params:{
           pictureId:pictureId
         },
-        url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityPictureById"
+        //url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityPictureById"
+        url:"/BicycleProject/Bicycle/commodity/selectCommodityPictureById"
       }).then(response=>{
         picture=response.data;
         //this.imageData.push(picture);
@@ -105,7 +106,8 @@ export default {
       await axios({
         methods: "get",
         params: {},
-        url: "http://127.0.0.1:8081/Bicycle/commodity/selectCommodityByName"
+        //url: "http://127.0.0.1:8081/Bicycle/commodity/selectCommodityByName"
+        url: "/BicycleProject/Bicycle/commodity/selectCommodityByName"
       }).then(async response => {
         commodityInfo = response.data;
         vm.commodityInfo = commodityInfo;

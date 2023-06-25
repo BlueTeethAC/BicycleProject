@@ -165,7 +165,8 @@ export default {
         params:{
           username:this.form.username
         },
-        url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName1"
+        // url:"http://127.0.0.1:8081/Bicycle/user/selectUserByName1"
+        url:"/BicycleProject/Bicycle/user/selectUserByName1"
       }).then(
         response=>{
           this.user=response.data;//赋值
@@ -203,7 +204,8 @@ export default {
           password:this.form.password,
           phoneNumber:this.form.phoneNumber
         },
-        url:"http://127.0.0.1:8081/Bicycle/user/addUser"
+        // url:"http://127.0.0.1:8081/Bicycle/user/addUser"
+        url:"/BicycleProject/Bicycle/user/addUser"
       }).then(
         response=>{
           this.i=response.data;
