@@ -174,7 +174,8 @@ export default {
       method:"get",
       params:{ //参数
       },
-      url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityByName"
+      //url:"http://127.0.0.1:8081/Bicycle/commodity/selectCommodityByName"
+      url:"/Bicycle/commodity/selectCommodityByName"
     }).then(response=>{
       repairItems1 = response.data;
     })

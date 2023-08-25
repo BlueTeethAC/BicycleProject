@@ -31,7 +31,7 @@ Vue.use(Router)
 export default new Router(
   {
 
-    mode:"history",
+    // mode:"history",
 
     routes:[
       {
@@ -41,6 +41,11 @@ export default new Router(
         name:"LoginView",
         props:true,//开启 props 接收参数名
         children:[ //配置嵌套路由
+          // {
+          //   //配置根目录重定向
+          //   path:"",
+          //   redirect:"/loginView/login"
+          // },
           {
             //登录组件 router
             path:"/loginView/login",

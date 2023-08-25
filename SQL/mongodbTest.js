@@ -79,11 +79,10 @@ db.ShoppingCart.drop()
 
 db.RepairOrdersDetails.find()
 
+db.CommodityPicture.find()
 
 
-
-
-
+db.CommodityPicture.find({"_id":"646d7321cc1c7e5690ac21e4"})
 
 
 

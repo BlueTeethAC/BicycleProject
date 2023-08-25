@@ -19,6 +19,7 @@ CREATE TABLE `user`(
 	phoneNumber CHAR(11) NOT NULL,/*电话号码*/
 	`role` INT(1) DEFAULT(0) NOT NULL, /*角色类型 0：顾客  1：管理员  2：最高管理员  默认值为0 */
 	`status` INT(1) DEFAULT(1) NOT NULL, /*是否启用 0：未启用   1：已启用   默认为1   （启用中的账户用户名不可以重复）*/
+	avatar BLOB /*头像*/
 )
 
 

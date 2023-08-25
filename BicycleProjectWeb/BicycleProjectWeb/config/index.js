@@ -13,7 +13,8 @@ module.exports = {
     proxyTable: {
       //配置地址代理
       '/BicycleProject':{ //要代理成的地址
-        target:"http://127.0.0.1:8081", //要被代理的地址
+        // target:"http://127.0.0.1:8081", //要被代理的地址
+        target:"http://124.221.16.10:8081", //要被代理的地址（服务器环境）
         changeOrigin:true,
         // pathRewrite:{'^/BicycleProject':''} //代理的时候把 /BicycleProject 替换成 '' （暂时没用，我咋知道，后续再看）
       }
